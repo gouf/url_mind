@@ -10,18 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180224004343) do
-
-  create_table "read_laters", force: :cascade do |t|
-    t.string "url"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+ActiveRecord::Schema.define(version: 20_180_224_004_343) do
+  create_table 'read_laters', force: :cascade do |t|
+    t.string 'url'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
   end
 
-  create_table "readlayters", force: :cascade do |t|
-    t.string "url"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table 'readlayters', force: :cascade do |t|
+    t.string 'url'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
   end
-
 end
