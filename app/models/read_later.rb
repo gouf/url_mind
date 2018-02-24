@@ -1,0 +1,2 @@
+class ReadLater < ApplicationRecord
+end
