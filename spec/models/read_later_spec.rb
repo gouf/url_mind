@@ -9,4 +9,10 @@ RSpec.describe ReadLater, type: :model do
 
     after(:each) { ReadLater.destroy_all }
   end
+
+  context 'pop when records is empty' do
+    subject { ReadLater.pop! }
+
+    it { is_expected.to be_nil }
+  end
 end
