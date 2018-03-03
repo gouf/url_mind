@@ -3,5 +3,7 @@ Rails.application.routes.draw do
 
   post 'read_laters/push', to: 'read_laters#push'
 
+  get 'read_laters/pop', to: 'read_laters#pop'
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

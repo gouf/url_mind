@@ -7,6 +7,12 @@ class ReadLatersController < ApplicationController
     @read_later = ReadLater.create!(read_laters_params)
   end
 
+  def pop
+    @read_later = ReadLater.pop!
+
+    render json: @read_later
+  end
+
   private
 
   def read_laters_params
