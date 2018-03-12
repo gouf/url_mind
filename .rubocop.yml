@@ -2,6 +2,7 @@ inherit_from: .rubocop_todo.yml
 
 # Ref: https://github.com/bbatsov/rubocop/blob/master/config/default.yml
 AllCops:
+  TargetRubyVersion: 2.5.0
   Rails:
     Enabled: true
   Exclude:
