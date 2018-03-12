@@ -1,2 +1,7 @@
 - @read_laters.each do |read_later|
   p = read_later.url
+
+= form_tag(read_laters_bulk_push_path)
+  label[for="urls"] Paste Markdown List style URLs:
+  textarea#urls[rows="30" cols="80" name="read_laters[url]"]
+  = submit_tag('submit')
