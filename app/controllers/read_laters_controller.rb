@@ -13,6 +13,9 @@ class ReadLatersController < ApplicationController
     render json: @read_later
   end
 
+  def bulk_push
+  end
+
   private
 
   def read_laters_params
