@@ -1,10 +1,7 @@
 {
   "name": "Url Mind",
-  "description": "TODO: Add a short description about Url Mind",
+  "description": "Yet another read it later",
   "keywords": [
-    "small",
-    "sharp",
-    "tool"
   ],
   "addons": [],
   "env": {}
