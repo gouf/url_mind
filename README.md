@@ -1,5 +1,9 @@
 # Tools
 
+* [Rubocop](https://github.com/bbatsov/rubocop) を使っています
+
+作業の一区切りやコミット前にチェック・修正をしてみてください
+
 * [ZenHub](https://www.zenhub.com/) をプロジェクト管理に利用しています
 
 Google Chrome, Firefox ブラウザ拡張が配布されているのでインストールしてください
