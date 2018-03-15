@@ -1,5 +1,9 @@
 .container
-  button#pop.btn.btn-primary.btn-lg.mb-3.mt-2 Pop URL
+  .row.mt-2
+    .col-md-2
+      button#pop.btn.btn-primary.btn-lg.mb-3.mt-2 Pop URL
+    .col-md-4.offset-md-6
+      .text-right.display-4 = number_with_delimiter(@read_laters.count)
 
 .container
   = form_tag(read_laters_bulk_push_path)
