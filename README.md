@@ -10,6 +10,10 @@
 
 Google Chrome, Firefox ブラウザ拡張が配布されているのでインストールしてください
 
+* [Guard](https://github.com/guard/guard) を使用しています
+
+ローカル環境に於けるTDD(Test Drive Development) 実践補助, Rubocop によるスタイルチェック違反に対して早期に気づけるようになっているので、利用してみてください (`bundle exec guard` で立ち上げます)
+
 # README
 
 This README would normally document whatever steps are necessary to get the
