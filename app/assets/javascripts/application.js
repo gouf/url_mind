@@ -16,3 +16,5 @@
 //= require_tree .
 //= require nprogress
 //= require nprogress-turbolinks
+//= require bootstrap-sprockets
+//= require popper

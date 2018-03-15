@@ -65,13 +65,13 @@ group :doc do
   gem 'yard'
 end
 
+gem 'bootstrap', '~> 4.0.0'
 gem 'less-rails'
 gem 'nprogress-rails'
 gem 'rails_safe_tasks'
 gem 'rb-readline'
 gem 'slim-rails'
 gem 'therubyracer'
-gem 'twitter-bootstrap-rails'
 group :development do
   gem 'annotate'
   gem 'better_errors'
