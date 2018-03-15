@@ -14,13 +14,7 @@ class ReadLatersController < ApplicationController
   end
 
   def bulk_push
-    markdown_listed_url_matcher = Regexp.new('\(?(http.+)\).?')
-
-    urls =
-      read_laters_params[:url].lines
-      .map(&:chomp)
-      .map { |url| markdown_listed_url_matcher.match(url)&.captures&.first }
-      .compact
+    urls = extract_urls_from_markdown
 
     ReadLater.transaction do
       urls.each do |url|
@@ -35,5 +29,11 @@ class ReadLatersController < ApplicationController
 
   def read_laters_params
     params.require(:read_laters).permit(:url)
+  end
+
+  def extract_urls_from_markdown
+    html = Markdown.new(read_laters_params[:url]).to_html
+    links = Nokogiri::HTML(html)
+    links.css('a').map { |element| element.attribute('href').value }
   end
 end

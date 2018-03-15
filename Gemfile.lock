@@ -245,6 +245,7 @@ GEM
     rb-inotify (0.9.10)
       ffi (>= 0.5.0, < 2)
     rb-readline (0.5.5)
+    redcarpet (3.4.0)
     ref (2.0.0)
     regexp_parser (0.4.9)
     rspec (3.6.0)
@@ -380,6 +381,7 @@ DEPENDENCIES
   less-rails
   listen (>= 3.0.5, < 3.2)
   mutant-rspec
+  nokogiri
   nprogress-rails
   pg
   pry-byebug
@@ -390,6 +392,7 @@ DEPENDENCIES
   rails (~> 5.1.5)
   rails_safe_tasks
   rb-readline
+  redcarpet
   rspec-rails
   rubocop
   sass-rails (~> 5.0)
