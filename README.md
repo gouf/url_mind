@@ -1,3 +1,9 @@
+# Tools
+
+* [Rubocop](https://github.com/bbatsov/rubocop) を使っています
+
+作業の一区切りやコミット前にチェック・修正をしてみてください
+
 # README
 
 This README would normally document whatever steps are necessary to get the
