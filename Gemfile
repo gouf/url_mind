@@ -33,6 +33,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 
 gem 'jquery-rails'
+gem 'redcarpet'
 
 group :production do
   gem 'pg'
