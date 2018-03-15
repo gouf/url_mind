@@ -1,6 +1,4 @@
-- @read_laters.first(10).each do |read_later|
-  ul.list-group
-    li.list-group-item = read_later.url
+button#pop.btn.btn-primary Pop URL
 
 = form_tag(read_laters_bulk_push_path)
   .form-group
@@ -9,4 +7,6 @@
   .form-group
     = submit_tag('submit', class: 'btn btn-secondary')
 
-button#pop.btn.btn-primary Pop URL
+- @read_laters.first(10).each do |read_later|
+  ul.list-group
+    li.list-group-item = read_later.url
