@@ -35,4 +35,21 @@ RSpec.describe ReadLatersController, type: :controller do
 
     after { ReadLater.destroy_all }
   end
+
+  describe 'POST #bulk_push' do
+    let(:urls) do
+      <<-EOF.lines.map(&:chomp).map(&:strip).join("\n") # <- this process is as what look text for.
+        * [example domain page](https://www.example.com/)
+        https://www.artstation.com/
+      EOF
+    end
+
+    it 'only 1 record inserted' do
+      expect do
+        post :bulk_push, params: { read_laters: { url: urls } }
+      end.to change(ReadLater, :count).by(1)
+    end
+
+    after { ReadLater.destroy_all }
+  end
 end
