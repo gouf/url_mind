@@ -4,6 +4,10 @@
 class DeleteDuplicatedUrlRecordJob < ApplicationJob
   queue_as :default
 
+  def perform(*args)
+class DeleteDuplicatedUrlRecordJob < ApplicationJob
+  queue_as :default
+
   def perform(**args)
     ReadLater.destroy(args[:id])
   end
