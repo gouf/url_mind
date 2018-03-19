@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe DispatchUnshortenUrlJob, type: :job do
@@ -19,7 +20,6 @@ RSpec.describe DispatchUnshortenUrlJob, type: :job do
   end
 
   context 'after performed' do
-
     before do
       ReadLater.create(url: 'https://t.co/lkmoGRJnqK?ssr=true')
       perform_enqueued_jobs do

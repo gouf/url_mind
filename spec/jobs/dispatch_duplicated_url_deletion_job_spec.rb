@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe DispatchDuplicatedUrlDeletionJob, type: :job do
@@ -31,7 +33,7 @@ RSpec.describe DispatchDuplicatedUrlDeletionJob, type: :job do
     end
 
     it 'delete 1 record' do
-      expect(ReadLater.count).to eq (duplicate_records_count - 1)
+      expect(ReadLater.count).to eq duplicate_records_count - 1
     end
 
     after do
