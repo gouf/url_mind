@@ -35,6 +35,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'jquery-rails'
 gem 'nokogiri'
 gem 'redcarpet'
+gem 'unshorten'
 
 group :production do
   gem 'pg'
