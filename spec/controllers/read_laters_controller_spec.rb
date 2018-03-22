@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe ReadLatersController, type: :controller do
@@ -20,7 +22,7 @@ RSpec.describe ReadLatersController, type: :controller do
 
   describe 'GET #pop' do
     before do
-      %w(a b).each { |x| ReadLater.create(url: "http://example.com/#{x}") }
+      %w[a b].each { |x| ReadLater.create(url: "http://example.com/#{x}") }
     end
 
     it 'consume one record' do

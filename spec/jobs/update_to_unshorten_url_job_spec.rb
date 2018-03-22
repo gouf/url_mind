@@ -2,8 +2,9 @@
 
 require 'rails_helper'
 
-RSpec.describe DeleteDuplicatedUrlRecordJob, type: :job do
+RSpec.describe UpdateToUnshortenUrlJob, type: :job do
   include ActiveJob::TestHelper
+
   ActiveJob::Base.queue_adapter = :test
 
   subject(:job) { described_class.perform_later(id: 1) }

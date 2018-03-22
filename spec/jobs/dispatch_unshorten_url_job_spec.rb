@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe DispatchDuplicatedUrlDeletionJob, type: :job do
+RSpec.describe DispatchUnshortenUrlJob, type: :job do
   include ActiveJob::TestHelper
   ActiveJob::Base.queue_adapter = :test
 
@@ -20,20 +20,15 @@ RSpec.describe DispatchDuplicatedUrlDeletionJob, type: :job do
   end
 
   context 'after performed' do
-    let(:duplicate_records_count) { 3 }
-
     before do
-      duplicate_records_count.times do
-        ReadLater.create(url: 'http://example.com')
-      end
-
+      ReadLater.create(url: 'https://t.co/lkmoGRJnqK?ssr=true')
       perform_enqueued_jobs do
-        DispatchDuplicatedUrlDeletionJob.perform_later
+        DispatchUnshortenUrlJob.perform_later
       end
     end
 
-    it 'delete 1 record' do
-      expect(ReadLater.count).to eq duplicate_records_count - 1
+    it 'has unshorten url' do
+      expect(ReadLater.first.url).to eq 'http://qiita.com/jnchito/items/ec04537b352123cab288'
     end
 
     after do

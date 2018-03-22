@@ -1,7 +1,8 @@
-# Search duplicate url from ReadLater and dispatch record deletion job
+# Search duplicate URL from ReadLater and dispatch record deletion job
 class DispatchDuplicatedUrlDeletionJob < ApplicationJob
   queue_as :default
 
+  # Search duplicate records of Readlater and dispatch delete
   def perform
     # Why `SELECT max(id)`? :
     # Readlater records behave as LIFO(Last-in First-out)

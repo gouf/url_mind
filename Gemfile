@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 source 'https://rubygems.org'
 
 git_source(:github) do |repo_name|
@@ -35,6 +37,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'jquery-rails'
 gem 'nokogiri'
 gem 'redcarpet'
+gem 'unshorten'
 
 group :production do
   gem 'pg'
