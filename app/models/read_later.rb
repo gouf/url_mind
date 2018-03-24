@@ -1,3 +1,4 @@
+# Manage the read later records
 class ReadLater < ApplicationRecord
   before_save :decode_as_raw_url
 
@@ -7,12 +8,14 @@ class ReadLater < ApplicationRecord
     self.url = URI.decode_www_form_component(url)
   end
 
-  # Find and return first record, then delete it.
+  # Delete first record
   # @return [Readlater, nil]
   def self.pop!
     first&.destroy
   end
 
+  # Save to records for multiple Markdown list style URLs
+  # @param markdown_list_style_urls [String] the Markdown list style URLs
   def self.bulk_push(markdown_list_style_urls)
     urls = extract_urls_from_markdown(markdown_list_style_urls)
 
@@ -23,6 +26,12 @@ class ReadLater < ApplicationRecord
     end
   end
 
+  # Extract URLs from Markdown style list
+  # @param markdown_list_style_urls [String] the Markdown list style URLs
+  # @return [Array<String>] Array of URL string
+  # @example Markdown style list to URL
+  #   Readlater.extract_urls_from_markdown('* [example](http://www.example.com/)')
+  #   # => ['http://www.example.com/']
   def self.extract_urls_from_markdown(markdown_list_style_urls)
     html = Markdown.new(markdown_list_style_urls).to_html
     links = Nokogiri::HTML(html)
