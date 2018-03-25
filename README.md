@@ -16,6 +16,12 @@
 
 # README
 
+## Use Case
+
+![Flow Chart](https://i.gyazo.com/c00f451eaf66ba9e66aa1ae2209e4c75.png)
+
+## Environment
+
 Things you may want to cover:
 
 * Ruby version: 2.5.0
