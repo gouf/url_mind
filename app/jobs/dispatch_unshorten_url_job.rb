@@ -4,6 +4,8 @@
 class DispatchUnshortenUrlJob < ApplicationJob
   queue_as :default
 
+  # Find Short-URL and dispatch unshorten job
+  # like t.co, buff.ly, bit.ly, etc (now only t.co)
   def perform
     twitter_url =
       ReadLater.where('url like :twitter', twitter: '%t.co%')
