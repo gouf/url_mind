@@ -44,12 +44,10 @@ group :production do
 end
 
 group :development, :test do
-  gem 'sqlite3'
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platforms: %i[mri mingw x64_mingw]
-  # Adds support for Capybara system testing and selenium driver
-  gem 'capybara', '~> 2.13'
+  gem 'byebug', platforms: %i[mri mingw x64_mingw] # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'capybara', '~> 2.13' # Adds support for Capybara system testing and selenium driver
   gem 'selenium-webdriver'
+  gem 'sqlite3'
 end
 
 group :development do
