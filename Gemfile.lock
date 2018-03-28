@@ -418,6 +418,3 @@ DEPENDENCIES
   unshorten
   web-console (>= 3.3.0)
   yard
-
-BUNDLED WITH
-   1.16.1
