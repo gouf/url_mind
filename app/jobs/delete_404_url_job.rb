@@ -6,6 +6,8 @@ require 'url_accessible'
 class Delete404UrlJob < ApplicationJob
   queue_as :default
 
+  # Delete the Readlater record if that is non accessible
+  # @param args [Hash] passes id with number (eg. id: 1)
   def perform(**args)
     record = ReadLater.find(args[:id])
     record.destroy if UrlAccessible.not_found?(record.url)

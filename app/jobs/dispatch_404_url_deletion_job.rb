@@ -7,6 +7,8 @@ class Dispatch404UrlDeletionJob < ApplicationJob
   DELAY_SECONDS = 30
   PROCESS_GROUP_CHUNK = 30
 
+  # Find the 404 records within all of the ReadLater
+  # To manage for split to processing group and process delay
   def perform
     # split records into group by chunk size
     process_group = ReadLater.all.map(&:id).each_slice(0.step(ReadLater.count, PROCESS_GROUP_CHUNK).size).lazy
