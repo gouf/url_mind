@@ -1,4 +1,5 @@
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
+[![Inline docs](http://inch-ci.org/github/gouf/url_mind.svg?branch=develop)](http://inch-ci.org/github/gouf/url_mind)
 
 # Tools
 
