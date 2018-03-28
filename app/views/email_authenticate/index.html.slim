@@ -1,0 +1,10 @@
+.container
+  .row
+    = form_tag(login_path)
+      .form-row
+        .form-group
+          = label_tag(:email, 'Login Email Address:')
+          = text_field_tag(:email, '', class: 'from-control', placeholder: 'example@example.com')
+      .form-row
+        .form-group
+          = submit_tag('Send Login Email', class: 'btn btn-primary')

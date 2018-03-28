@@ -17,3 +17,7 @@
  *= require nprogress
  */
 @import 'bootstrap';
+
+a[disabled] {
+  pointer-events: none;
+}

@@ -1,5 +1,8 @@
 # Manipulate records of Readlater
 class ReadLatersController < ApplicationController
+  before_action :current_user
+  before_action :redirect_to_login_page_when_not_logged_in
+
   # Show Readlater records
   def index
     @read_laters = ReadLater.all
@@ -29,5 +32,9 @@ class ReadLatersController < ApplicationController
   # Retreive params from form
   def read_laters_params
     params.require(:read_laters).permit(:url)
+  end
+
+  def redirect_to_login_page_when_not_logged_in
+    redirect_to login_path unless @current_user
   end
 end

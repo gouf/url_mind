@@ -8,5 +8,9 @@ Rails.application.routes.draw do
 
   get 'read_laters/pop', to: 'read_laters#pop'
 
+  get 'login', to: 'email_authenticate#index'
+  post 'login', to: 'email_authenticate#create'
+  delete 'logout', to: 'email_authenticate#destroy'
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
