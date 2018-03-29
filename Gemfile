@@ -38,6 +38,7 @@ gem 'jquery-rails'
 gem 'nokogiri'
 gem 'redcarpet'
 gem 'unshorten'
+gem 'bundler', '1.16.1'
 
 group :production do
   gem 'pg'

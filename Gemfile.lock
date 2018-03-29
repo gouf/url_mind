@@ -403,6 +403,7 @@ DEPENDENCIES
   binding_of_caller
   bootstrap (~> 4.0.0)
   bullet
+  bundler (= 1.16.1)
   byebug
   capybara (~> 2.13)
   coveralls
@@ -448,3 +449,6 @@ DEPENDENCIES
   unshorten
   web-console (>= 3.3.0)
   yard
+
+BUNDLED WITH
+   1.16.1
