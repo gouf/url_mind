@@ -18,10 +18,6 @@ describe JobGrouping do
     end
 
     it 'returns 5 groups of array' do
-      pp subject
-      s = subject.dup
-      s.map! { |x| [x.first, x.last.size] }
-      pp s
       expect(subject.size).to eq 5
     end
 
