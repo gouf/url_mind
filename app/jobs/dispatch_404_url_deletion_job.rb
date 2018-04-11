@@ -4,25 +4,13 @@
 class Dispatch404UrlDeletionJob < ApplicationJob
   queue_as :default
 
-  DELAY_SECONDS = 30
-  PROCESS_GROUP_CHUNK = 30
-
   # Find the 404 records within all of the ReadLater
   # To manage for split to processing group and process delay
   def perform
-    # split records into group by chunk size
-    process_group = ReadLater.all.map(&:id).each_slice(0.step(ReadLater.count, PROCESS_GROUP_CHUNK).size).lazy
-    # => [[2, 4, 8, ...], [128, 256, 512, ...], ...]
+    job_grouping =
+      JobGrouping.new(ReadLater.all.pluck(:id), group_delay_seconds: 30, process_group_chunk: 30)
 
-    delay_group = Array.new(process_group.size, nil).inject([]) { |ret, _| ret << ret.last.to_i + DELAY_SECONDS }.lazy
-    # => [30, 60, 90, 120, ...]
-
-    delay_group.zip(process_group).each do |delay, ids|
-    # => [
-    #   [30, [128, 256, 512, ...]],
-    #   [60, [2, 4, 8, ...]],
-    #   ...,
-    # ]
+    job_grouping.separate_to_groups.each do |delay, ids|
       ids.each { |id| Delete404UrlJob.set(wait: delay.seconds).perform_later(id: id) }
     end
   end
