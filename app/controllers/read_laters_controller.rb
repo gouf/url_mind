@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Manipulate records of Readlater
 class ReadLatersController < ApplicationController
   # Show Readlater records
