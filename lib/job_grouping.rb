@@ -20,7 +20,7 @@ class JobGrouping
 
   # split record ids into group by chunk size
   def process_group
-    slice_size = 0.step(@ids.size, @process_group_chunk).size
+    slice_size = 0.step(@ids.size - 1, @process_group_chunk).size
 
     @ids.each_slice(slice_size).lazy
     # => [[1, 2, 3, ...], [10, 11, 12, ...], ...]
