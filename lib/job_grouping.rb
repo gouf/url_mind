@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Separate jobs into groups for delay processing of Active Job
 class JobGrouping
   def initialize(ids, group_delay_seconds: 30, process_group_chunk: 30)

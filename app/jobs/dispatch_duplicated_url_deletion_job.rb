@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Search duplicate URL from ReadLater and dispatch record deletion job
 class DispatchDuplicatedUrlDeletionJob < ApplicationJob
   queue_as :default

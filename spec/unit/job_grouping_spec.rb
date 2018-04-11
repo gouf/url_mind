@@ -11,8 +11,8 @@ describe JobGrouping do
     it 'class is Enumerator::Lazy' do
       klass =
         JobGrouping.new(ids, group_delay_seconds: 1, process_group_chunk: 5)
-        .separate_to_groups
-        .class
+                   .separate_to_groups
+                   .class
 
       expect(klass).to eq Enumerator::Lazy
     end

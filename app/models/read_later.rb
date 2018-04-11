@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Manage the read later records
 class ReadLater < ApplicationRecord
   before_save :decode_as_raw_url
