@@ -3,7 +3,7 @@
 require 'job_grouping' # lib/job_grouping.rb
 
 describe JobGrouping do
-  context 'when 100 ids passed' do
+  context 'when 10 ids passed' do
     let(:ids) { (1..10).to_a }
 
     subject { JobGrouping.new(ids, group_delay_seconds: 1, process_group_chunk: 5).separate_to_groups.to_a }
