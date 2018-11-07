@@ -9,11 +9,13 @@
   = form_tag(read_laters_bulk_push_path)
     .form-group
       label[for="urls"] Paste Markdown List style URLs:
-      textarea#urls.form-control[rows="30" cols="80" name="read_laters[url]"]
+      textarea#urls.form-control[rows="13" cols="10" name="read_laters[url]"]
     .form-group
       = submit_tag('submit', class: 'btn btn-secondary btn-block')
 
-.container.mb-3
-  - @read_laters.first(10).each do |read_later|
-    ul.list-group
-      li.list-group-item = read_later.url
+.container
+  .read_later-items.md-3
+    - @read_laters.first(10).each do |read_later|
+      ul.list-group.read_later-item
+        li.read_later-item_title = read_later.title
+        li.read_later-item_url = read_later.url

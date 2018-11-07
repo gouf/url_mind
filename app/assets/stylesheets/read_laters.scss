@@ -1,3 +1,39 @@
 // Place all the styles related to the ReadLaters controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.read_later {
+  &-items {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  &-item {
+    align-self: center;
+    background: #DEDEDE;
+    width: 30%;
+    margin: 0.3rem;
+    margin-top: 0.8rem;
+    padding: 1.5rem;
+    cursor: pointer;
+
+    &:hover {
+      background: #CECECE;
+    }
+
+    & li {
+      padding-left: 1rem;
+      list-style: none;
+    }
+
+    &_title {
+      padding: 1rem;
+      font-size: 1.8rem;
+    }
+
+    &_url {
+      font-size: 0.8rem;
+      overflow: hidden;
+    }
+  }
+}
