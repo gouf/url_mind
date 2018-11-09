@@ -82,6 +82,7 @@ group :development do
   gem 'binding_of_caller'
   gem 'bullet'
   gem 'guard'
+  gem 'guard-livereload'
   gem 'guard-rspec'
   gem 'guard-rubocop'
   gem 'pry-byebug'
