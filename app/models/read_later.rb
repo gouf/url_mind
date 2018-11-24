@@ -28,11 +28,15 @@ class ReadLater < ApplicationRecord
   # Save to records for multiple Markdown list style URLs
   # @param markdown_list_style_urls [String] the Markdown list style URLs
   def self.bulk_push(markdown_list_style_urls)
+    titles = extract_titles_from_markdown(markdown_list_style_urls)
     urls = extract_urls_from_markdown(markdown_list_style_urls)
 
     ReadLater.transaction do
-      urls.each do |url|
-        ReadLater.create!(url: url)
+      [titles, urls].transpose.each do |title, url|
+        ReadLater.create!(
+          title: title,
+          url: url
+        )
       end
     end
   end
@@ -47,5 +51,11 @@ class ReadLater < ApplicationRecord
     html = Markdown.new(markdown_list_style_urls).to_html
     links = Nokogiri::HTML(html)
     links.css('a').map { |element| element.attribute('href').value }
+  end
+
+  def self.extract_titles_from_markdown(markdown_list_style_urls)
+    html = Markdown.new(markdown_list_style_urls).to_html
+    links = Nokogiri::HTML(html)
+    links.css('a').map(&:text)
   end
 end
