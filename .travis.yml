@@ -2,3 +2,6 @@ language: ruby
 rvm:
  - 2.3.4
  - 2.5.0
+
+before_script:
+  - RAILS_ENV=test bundle e rails db:migrate
