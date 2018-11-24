@@ -25,7 +25,7 @@ $(function() {
     popReadLaterURL().done(openLinkWithNewTab);
   });
   $('.js-url-popup li').on('click', function() {
-    let url = $(this).data('url')
+    var url = $(this).data('url')
 
     window.open(url, '_blank');
     submitRemoveUrlValue(url)
