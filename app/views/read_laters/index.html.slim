@@ -12,10 +12,11 @@
       textarea#urls.form-control[rows="13" cols="10" name="read_laters[url]"]
     .form-group
       = submit_tag('submit', class: 'btn btn-secondary btn-block')
-
 .container
   .read_later-items.md-3
     - @read_laters.first(10).each do |read_later|
-      ul.list-group.read_later-item
-        li.read_later-item_title = read_later.title
-        li.read_later-item_url = read_later.url
+      ul.list-group.read_later-item.js-url-popup[data-url="#{read_later.url}"]
+        li.read_later-item_title[data-url="#{read_later.url}"] = read_later.title
+        li.read_later-item_url[data-url="#{read_later.url}"] = read_later.url
+  = form_for(@read_later, url: read_laters_delete_path, html: { id: :delete_url }) do |f|
+    = tag.input('', type: :hidden, name: :url, id: :delete_target_url)

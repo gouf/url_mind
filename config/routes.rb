@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
   post 'read_laters/push', to: 'read_laters#push'
   post 'read_laters/bulk_push', to: 'read_laters#bulk_push'
+  post 'read_laters/delete', to: 'read_laters#delete'
 
   get 'read_laters/pop', to: 'read_laters#pop'
 

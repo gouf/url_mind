@@ -11,8 +11,23 @@ function popReadLaterURL() {
   );
 }
 
+function setRemoveTargetUrlValue(url) {
+  $('#delete_target_url').val(url)
+}
+
+function submitRemoveUrlValue(url) {
+  setRemoveTargetUrlValue(url)
+  $('#delete_url').trigger('submit')
+}
+
 $(function() {
   $('#pop').on('click', function() {
     popReadLaterURL().done(openLinkWithNewTab);
   });
+  $('.js-url-popup li').on('click', function() {
+    let url = $(this).data('url')
+
+    window.open(url, '_blank');
+    submitRemoveUrlValue(url)
+  })
 });
