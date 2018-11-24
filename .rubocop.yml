@@ -9,6 +9,8 @@ AllCops:
     - Guardfile
     - bin/*
     - vendor/**/*
+    - db/schema.rb
+    - db/**/*
 Metrics/LineLength:
   Max: 120
 inherit_from:
